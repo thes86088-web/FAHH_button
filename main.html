@@ -35,4 +35,20 @@
         <p id="message">FAHH</p>
     </div>
 </div>
+
+    <script>
+
+        function playSound()
+        {
+            var x = document.createElement("FAHH.mp3");
+            console.log("pressed");
+            x.playSound() ;
+
+        }
+
+        const press = document.getElementById("press") ;
+        press.addEventListener("click", playSound  )
+
+    </script>
+
 </html>
