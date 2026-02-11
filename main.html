@@ -37,19 +37,19 @@
 
     <script>
 
-        function changeShade()
+        function changeShade(id)
         {
             var red_ = Math.floor(Math.random()*256);
             var green_ = Math.floor(Math.random()*256);
             var blue_ = Math.floor(Math.random()*256);
 
-            document.getElementById("press").style.backgroundColor = `rgb(${red_}, ${green_}, ${blue_})` ;
+            document.getElementById(id).style.backgroundColor = `rgb(${red_}, ${green_}, ${blue_})` ;
         }
         
         function playSound()
         {
             var x = new Audio("FAHH.mp3");
-            changeShade() ;
+            changeShade("press") ;
             x.play() ;
         }
         
