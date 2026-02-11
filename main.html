@@ -58,15 +58,20 @@
         function playSound()
         {
             var x = new Audio("FAHH.mp3");
+            x.play() ;
+        }
+
+        function initChaos()
+        {
+            playSound();
             changeShade("press") ;
             changeShade("shadow") ;
             changeShade_text("message") ;
-            x.play() ;
         }
         
 
         const press = document.getElementById("press") ;
-        press.addEventListener("click", playSound  )
+        press.addEventListener("click", initChaos  )
 
     </script>
 
