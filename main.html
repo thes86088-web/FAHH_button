@@ -1,78 +1,79 @@
-
 <style>
-    
-    #shadow{
-        position: relative;
-        left: 20%; top : 25%;
-        background-color: black; 
-        height: 70%;
-        width: 70%;
-        border-radius: 50%;
-    }
+  #shadow {
+    position: relative;
+    left: 20%;
+    top: 25%;
+    background-color: black;
+    height: 70%;
+    width: 70%;
+    border-radius: 50%;
+  }
 
-    #press{
-        position: relative;
-        left: 2.5%;
-        top : 2.5%;
-        height: 95%;
-        width: 95%;
-        background-color: rgb(255,0,0);
-        border-radius: 50%;
-    }
+  #press {
+    position: relative;
+    left: 2.5%;
+    top: 2.5%;
+    height: 95%;
+    width: 95%;
+    background-color: rgb(255, 0, 0);
+    border-radius: 50%;
+  }
 
-    #message{
-        position: relative; top: 5%; 
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 800%;
-    }
-
+  #message {
+    position: relative;
+    top: 5%;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 800%;
+  }
 </style>
 
 <html>
-<div id="shadow">
-    <button id="press" >
-        <p id="message">FAHH</p>
+  <div id="shadow">
+    <button id="press">
+      <p id="message">FAHH</p>
     </button>
-</div>
+  </div>
 
-    <script>
+  <script>
+    function changeShade(id) {
+      var red_ = Math.floor(Math.random() * 256);
+      var green_ = Math.floor(Math.random() * 256);
+      var blue_ = Math.floor(Math.random() * 256);
 
-        function changeShade(id)
-        {
-            var red_ = Math.floor(Math.random()*256);
-            var green_ = Math.floor(Math.random()*256);
-            var blue_ = Math.floor(Math.random()*256);
+      document.getElementById(
+        id
+      ).style.backgroundColor = `rgb(${red_}, ${green_}, ${blue_})`;
+    }
 
-            document.getElementById(id).style.backgroundColor = `rgb(${red_}, ${green_}, ${blue_})` ;
-        }
+    function changeShade_text(id) {
+      var red_ = Math.floor(Math.random() * 256);
+      var green_ = Math.floor(Math.random() * 256);
+      var blue_ = Math.floor(Math.random() * 256);
 
-        function changeShade_text(id)
-        {
-            var red_ = Math.floor(Math.random()*256);
-            var green_ = Math.floor(Math.random()*256);
-            var blue_ = Math.floor(Math.random()*256);
+      document.getElementById(
+        id
+      ).style.color = `rgb(${red_}, ${green_}, ${blue_})`;
+    }
 
-            document.getElementById(id).style.color = `rgb(${red_}, ${green_}, ${blue_})` ;
-        }
-        
-        function playSound()
-        {
-            var x = new Audio("FAHH.mp3");
-            x.play() ;
-        }
+    function playSound() {
+      var chance = Math.floor(Math.random() * 100);
+      if (chance === 13) {
+        var x = new Audio("Brah.mp3");
+        x.play();
+      } else {
+        var x = new Audio("FAHH.mp3");
+        x.play();
+      }
+    }
 
-        function initChaos()
-        {
-            playSound();
-            changeShade("press") ;
-            changeShade("shadow") ;
-            changeShade_text("message") ;
-        }
-        
+    function initChaos() {
+      playSound();
+      changeShade("press");
+      changeShade("shadow");
+      changeShade_text("message");
+    }
 
-        const press = document.getElementById("press") ;
-        press.addEventListener("click", initChaos  )
-
-    </script>
-
+    const press = document.getElementById("press");
+    press.addEventListener("click", initChaos);
+  </script>
 </html>
