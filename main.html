@@ -21,43 +21,57 @@
     }
 
     #message{
-        position: relative;
-        left : 25% ; top: 35%; 
+        position: relative; top: 5%; 
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-size: 800%;
-
     }
 
 </style>
 
 <html>
 <div id="shadow">
-    <div id="press" >
+    <button id="press" >
         <p id="message">FAHH</p>
-    </div>
+    </button>
 </div>
 
     <script>
 
-        function changeShade()
+        function changeShade(id)
         {
             var red_ = Math.floor(Math.random()*256);
             var green_ = Math.floor(Math.random()*256);
             var blue_ = Math.floor(Math.random()*256);
 
-            document.getElementById("press").style.backgroundColor = `rgb(${red_}, ${green_}, ${blue_})` ;
+            document.getElementById(id).style.backgroundColor = `rgb(${red_}, ${green_}, ${blue_})` ;
+        }
+
+        function changeShade_text(id)
+        {
+            var red_ = Math.floor(Math.random()*256);
+            var green_ = Math.floor(Math.random()*256);
+            var blue_ = Math.floor(Math.random()*256);
+
+            document.getElementById(id).style.color = `rgb(${red_}, ${green_}, ${blue_})` ;
         }
         
         function playSound()
         {
             var x = new Audio("FAHH.mp3");
-            changeShade() ;
             x.play() ;
+        }
+
+        function initChaos()
+        {
+            playSound();
+            changeShade("press") ;
+            changeShade("shadow") ;
+            changeShade_text("message") ;
         }
         
 
         const press = document.getElementById("press") ;
-        press.addEventListener("click", playSound  )
+        press.addEventListener("click", initChaos  )
 
     </script>
 
