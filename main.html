@@ -45,11 +45,22 @@
 
             document.getElementById(id).style.backgroundColor = `rgb(${red_}, ${green_}, ${blue_})` ;
         }
+
+        function changeShade_text(id)
+        {
+            var red_ = Math.floor(Math.random()*256);
+            var green_ = Math.floor(Math.random()*256);
+            var blue_ = Math.floor(Math.random()*256);
+
+            document.getElementById(id).style.color = `rgb(${red_}, ${green_}, ${blue_})` ;
+        }
         
         function playSound()
         {
             var x = new Audio("FAHH.mp3");
             changeShade("press") ;
+            changeShade("shadow") ;
+            changeShade_text("message") ;
             x.play() ;
         }
         
